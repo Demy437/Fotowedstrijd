@@ -27,14 +27,11 @@ Auth::routes();
 // =============== navbar pages start =====================
 
 Route::get('/fotos', function () {
-    return view('fotos');
+    return view('pages/fotos');
 });
 Auth::routes();
 
 Route::get('/videos', function () {
-<<<<<<< Updated upstream
-    return view('videos');
-=======
     return view('pages/videos');
 });
 Auth::routes();
@@ -46,7 +43,6 @@ Auth::routes();
 
 Route::get('/register', function () {
     return view('auth/register');
->>>>>>> Stashed changes
 });
 Auth::routes();
 
