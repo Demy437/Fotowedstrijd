@@ -1,18 +1,60 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\ApiAuthController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LogoutController;
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('home');
+});
+
+Auth::routes();
 
 // =============== navbar pages start =====================
-Route::get('/', function () {
-    return view('index');
-});
+
 Route::get('/fotos', function () {
     return view('fotos');
 });
+Auth::routes();
+
 Route::get('/videos', function () {
+<<<<<<< Updated upstream
     return view('videos');
+=======
+    return view('pages/videos');
 });
+Auth::routes();
+
+Route::get('/login', function () {
+    return view('auth/login');
+});
+Auth::routes();
+
+Route::get('/register', function () {
+    return view('auth/register');
+>>>>>>> Stashed changes
+});
+Auth::routes();
+
 // =============== navbar pages end =====================
 
 Route::resource('images', ImageController::class);
+Auth::routes();
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/logout', [LogoutController::class, 'perform']);
+ });
