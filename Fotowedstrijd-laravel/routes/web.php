@@ -22,5 +22,4 @@ Route::get('/registreren', function () {
 });
 // =============== navbar pages end =====================
 
-  
 Route::resource('images', ImageController::class);
