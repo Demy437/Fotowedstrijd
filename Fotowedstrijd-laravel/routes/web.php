@@ -8,10 +8,16 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/fotos', function () {
-    return view('fotos');
+    return view('pages/fotos');
 });
 Route::get('/videos', function () {
-    return view('videos');
+    return view('pages/videos');
+});
+Route::get('/login', function () {
+    return view('pages/login');
+});
+Route::get('/registreren', function () {
+    return view('pages/registreren');
 });
 // =============== navbar pages end =====================
 
