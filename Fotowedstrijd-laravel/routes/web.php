@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageController;
 
+
 // =============== navbar pages start =====================
 Route::get('/', function () {
     return view('index');
@@ -21,4 +22,5 @@ Route::get('/registreren', function () {
 });
 // =============== navbar pages end =====================
 
+  
 Route::resource('images', ImageController::class);
