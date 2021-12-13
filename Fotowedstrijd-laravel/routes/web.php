@@ -5,6 +5,8 @@ use App\Http\Controllers\Auth\ApiAuthController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\VideoController;
+
 
 
 /*
@@ -63,3 +65,7 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/logout', [LogoutController::class, 'perform']);
  });
+
+ //======================= video upload========================
+  
+Route::resource('videos', VideoController::class);
